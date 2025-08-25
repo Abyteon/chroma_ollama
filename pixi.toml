@@ -1,0 +1,46 @@
+[project]
+name = "chroma-ollama"
+version = "0.1.0"
+description = "Chroma + Ollama 向量库项目"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+python = "3.12.*"
+
+[pypi-dependencies]
+chromadb = ">=0.5.0"
+ollama = ">=0.3.0"
+orjson = ">=3.9.15"
+python-dotenv = ">=1.0.1"
+tqdm = ">=4.66.4"
+kafka-python = ">=2.0.2"
+esdk-obs-python = ">=3.22.3"
+confluent-kafka = ">=2.6.0"
+polars = ">=0.20.0"
+pydantic = ">=2.0.0"
+pydantic-settings = ">=2.0.0"
+structlog = ">=23.0.0"
+tenacity = ">=8.0.0"
+
+[tasks]
+install = "pip install -e ."
+ingest = "python -m chroma_ollama.ingest"
+search = "python -m chroma_ollama.search"
+worker = "python -m chroma_ollama.worker"
+pool-worker = "python -m chroma_ollama.pool_worker"
+generate-tasks = "python -m chroma_ollama.task_generator"
+test = "python test_improvements.py"
+test-kafka = "python test_kafka.py"
+test-workflow = "python test_enhanced_workflow.py"
+test-generator = "python test_task_generator.py"
+
+# 示例任务（带环境变量）
+ingest-example = { cmd = "python -m chroma_ollama.ingest", env = { DATA_DIR = "./data", BATCH_SIZE = "50" } }
+search-example = { cmd = "python -m chroma_ollama.search", env = { SEARCH_QUERY = "测试查询", SEARCH_K = "3" } }
+generate-single-task = { cmd = "python -m chroma_ollama.task_generator", env = { SINGLE_FILE = "test/sample.txt", SOURCE_BUCKET = "my-bucket" } }
+generate-batch-tasks = { cmd = "python -m chroma_ollama.task_generator", env = { SOURCE_BUCKET = "my-bucket", FILE_PREFIX = "data/", MAX_FILES = "100" } }

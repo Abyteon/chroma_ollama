@@ -1,0 +1,22 @@
+# 核心依赖
+chromadb>=0.5.0,<1.0.0
+ollama>=0.3.0,<1.0.0
+orjson>=3.9.15,<4.0.0
+python-dotenv>=1.0.1,<2.0.0
+tqdm>=4.66.4,<5.0.0
+
+# Kafka相关
+kafka-python>=2.0.2,<3.0.0
+confluent-kafka>=2.6.0,<3.0.0
+
+# OBS相关
+esdk-obs-python>=3.22.3,<4.0.0
+
+# 数据处理
+polars>=0.20.0,<1.0.0
+
+# 新增依赖
+pydantic>=2.0.0,<3.0.0
+pydantic-settings>=2.0.0,<3.0.0
+structlog>=23.0.0,<24.0.0
+tenacity>=8.0.0,<9.0.0

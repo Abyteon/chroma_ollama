@@ -1,0 +1,16 @@
+[
+  {
+    "insight_id": "PRICE_001",
+    "aspect": "价格",
+    "insight": "价格偏高",
+    "description": "用户认为价格高于预期或竞品，表现为抱怨成本过高、性价比不足。",
+    "examples": [
+      "这车比同级别贵太多",
+      "价格虚高，不值得",
+      "花这么多钱买不到好体验"
+    ],
+    "keywords": ["贵", "价格高", "虚高", "不划算"],
+    "sentiment": "negative",
+    "status": "active"
+  }
+]
